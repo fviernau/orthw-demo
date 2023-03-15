@@ -7,7 +7,9 @@ Pre-requisites:
 ```
 mkdir -p support/vehicle-app-cpp-sdk && cd support/vehicle-app-cpp-sdk
 orthw init https://github.com/fviernau/orthw-demo/raw/main/scan-results/scan-result.json.xz
+find .orthw/scan-results/
 orthw report-html
+orthw report-notices
 firefox report.html
 ```
 
@@ -39,7 +41,7 @@ orthw offending-packages && orthw offending-packages | wc -l
 
 ```
     orthw offending-licenses Conan::c-ares:1.18.1 .
-    orthworth offending-licenses Conan::c-ares:1.18.1
+    orthw offending-licenses Conan::c-ares:1.18.1
     orthw licenses Conan::c-ares:1.18.1 .
     orthw licenses Conan::c-ares:1.18.1
 ```
@@ -73,6 +75,9 @@ Explanations:
    orthw offending-licenses Conan::c-ares:1.18.1 .
    ````
 5. Add another path exclude at the bottom
+   ```
+   code /home/frank/devel/ort/ort-config/package-configurations/Conan/_/c-ares/1.18.1/source-artifact.yml
+   ```
    ```
    - pattern: "c-ares-1.18.1/missing"
      reason: "BUILD_TOOL_OF"    
